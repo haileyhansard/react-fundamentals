@@ -8,10 +8,15 @@
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
 
   <script type="text/babel">
-    const element = 
-      <div className="container">
-        Hello World
-      </div>
-      ReactDOM.render(element, document.getElementById('root'))
+    const className = 'container'
+    const children = 'Hello World'
+    const props = {children, className}
+
+    //console.log({id: "my-thing", ...props, className: 'default'})
+    
+    //without props:
+    //const element = <div className={className}>{children}</div>
+    const element = <div id="my-thing" className="default" {...props} />
+    ReactDOM.render(element, document.getElementById('root'))
   </script>
 </body>
